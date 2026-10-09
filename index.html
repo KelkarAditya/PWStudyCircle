@@ -1,0 +1,223 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PW Study Circle – A fan tribute to Physics Wallah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f6ff;--card:#fff;--ink:#14123a;--mut:#5b5a7e;--pri:#4f3fd6;--pri-ink:#fff;--acc:#ffc926;--line:#e3e1f7;--ok:#0a7d4b;--err:#c0262d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0d24;--card:#171640;--ink:#f1f0ff;--mut:#a9a8cf;--pri:#8f82ff;--pri-ink:#0e0d24;--line:#2b2a5e;--ok:#4fd69a;--err:#ff7b80}}
+:root[data-theme="dark"]{--bg:#0e0d24;--card:#171640;--ink:#f1f0ff;--mut:#a9a8cf;--pri:#8f82ff;--pri-ink:#0e0d24;--line:#2b2a5e;--ok:#4fd69a;--err:#ff7b80}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3,.brand{font-family:Poppins,system-ui,sans-serif;line-height:1.15;margin:0}
+a{color:var(--pri)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;flex-wrap:wrap}
+.brand{font-weight:800;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand span{background:var(--acc);color:#14123a;padding:1px 8px;border-radius:8px;margin-right:6px}
+nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+nav a.l{display:block;padding:8px 14px;border-radius:999px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem}
+nav a.l[aria-current=page]{background:var(--pri);color:var(--pri-ink)}
+nav a.l:hover{background:var(--line)}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.btn{display:inline-block;background:var(--pri);color:var(--pri-ink);border:0;border-radius:12px;padding:13px 24px;font:700 1rem Poppins,sans-serif;text-decoration:none;cursor:pointer}
+.btn.alt{background:var(--acc);color:#14123a}
+.btn:disabled{opacity:.6;cursor:wait}
+.hero{padding:56px 0 40px;display:grid;gap:32px;grid-template-columns:1.2fr 1fr;align-items:center}
+.eyebrow{font-weight:700;color:var(--pri);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem}
+.hero h1{font-size:clamp(2rem,6vw,3.4rem);margin:10px 0 16px}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--acc) 62%)}
+.lead{color:var(--mut);font-size:1.1rem;max-width:34em}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px}
+.eq{font:700 1.5rem Poppins,sans-serif;text-align:center;padding:12px 0}
+.eq small{display:block;font:500 .9rem Inter,sans-serif;color:var(--mut);margin-top:6px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+section.s{padding:36px 0}
+section.s>h2{font-size:1.7rem;margin-bottom:8px}
+.sub{color:var(--mut);margin:0 0 22px}
+.tag{display:inline-block;background:var(--acc);color:#14123a;font-weight:700;font-size:.75rem;border-radius:6px;padding:2px 8px;margin-bottom:10px}
+.panel h3{font-size:1.1rem;margin-bottom:6px}
+.panel p{margin:0;color:var(--mut)}
+.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:3px solid var(--line)}
+.tl li{position:relative;padding:0 0 28px 18px}
+.tl li::before{content:"";position:absolute;left:-31px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--pri);border:3px solid var(--bg)}
+.tl b{font-family:Poppins,sans-serif}
+.tl .y{color:var(--pri);font-weight:700;font-size:.85rem}
+.banner{background:var(--pri);color:var(--pri-ink);border-radius:20px;padding:32px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:20px 0 40px}
+.banner h2{font-size:1.5rem}
+form{display:grid;gap:16px}
+.two{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+label{font-weight:600;font-size:.92rem;display:block;margin-bottom:6px}
+input,select,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+textarea{min-height:110px;resize:vertical}
+.msg{padding:14px 16px;border-radius:12px;font-weight:600}
+.msg.ok{background:color-mix(in srgb,var(--ok) 16%,transparent);color:var(--ok)}
+.msg.err{background:color-mix(in srgb,var(--err) 16%,transparent);color:var(--err)}
+.hint{font-size:.85rem;color:var(--mut)}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mut);font-size:.85rem}
+.soc{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.soc h3{font-size:1.05rem;margin-bottom:10px}
+.soc ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.soc a{display:flex;justify-content:space-between;gap:8px;padding:10px 14px;border:1.5px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem}
+.soc a:hover{border-color:var(--pri);background:var(--bg)}
+.soc a span{color:var(--pri)}
+footer .fl{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+.cls{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.cls a{display:block;text-align:center;padding:16px 10px;border-radius:14px;background:var(--card);border:1px solid var(--line);text-decoration:none;color:var(--ink);font:700 1rem Poppins,sans-serif}
+.cls a small{display:block;font:500 .8rem Inter,sans-serif;color:var(--mut);margin-top:2px}
+.cls a:hover{border-color:var(--pri);background:var(--pri);color:var(--pri-ink)}
+.cls a:hover small{color:var(--pri-ink)}
+@media(max-width:720px){.hero{grid-template-columns:1fr;padding-top:32px}.two{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:no-preference){.panel{transition:transform .2s}.panel:hover{transform:translateY(-3px)}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav aria-label="Main">
+<a class="brand" id="home" href="#/" aria-label="PW Study Circle, go to home page"><span>PW</span>Study Circle</a>
+<ul>
+<li><a class="l" href="#/" data-r="/">Home</a></li>
+<li><a class="l" href="#/story" data-r="/story">The Story</a></li>
+<li><a class="l" href="#/join" data-r="/join">Join</a></li>
+</ul></nav></div></header>
+
+<main id="app" class="wrap" tabindex="-1"></main>
+
+<footer><div class="wrap"><div class="fl"><a href="https://www.youtube.com/@PhysicsWallah" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.instagram.com/physicswallah/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://x.com/PhysicsWallah" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.pw.live" target="_blank" rel="noopener noreferrer">pw.live</a></div>An unofficial fan tribute to Alakh Pandey and Physics Wallah, made by a student. Not affiliated with or endorsed by PhysicsWallah Limited. For official courses, visit pw.live.</div></footer>
+
+<script>
+// Paste your Formspree endpoint here (https://formspree.io), e.g. https://formspree.io/f/abcdwxyz
+const FORM_ENDPOINT="https://formspree.io/f/mvkzarvb";
+const $=s=>document.querySelector(s);
+const pages={
+"/":()=>`
+<section class="hero">
+ <div>
+  <div class="eyebrow">Fan tribute · Made for students</div>
+  <h1>Physics ko banao <em>aasaan</em>, sapne banao possible.</h1>
+  <p class="lead">Alakh Pandey, popularly known as "Physics Wallah", started teaching physics on YouTube and helped make quality exam prep affordable for lakhs of students across India. This is a small community hub for people who learned, and are still learning, with PW.</p>
+  <div class="cta"><a class="btn" href="#/join">Join the Study Circle</a><a class="btn alt" href="#/story">Read the story</a></div>
+ </div>
+ <div class="panel" aria-hidden="true"><div class="eq">F = ma<small>Start with the basics. Everything builds on them.</small></div></div>
+</section>
+<section class="s">
+ <h2>Why students value PW</h2>
+ <p class="sub">What this community is built around.</p>
+ <div class="grid">
+  <article class="panel"><span class="tag">ACCESS</span><h3>Affordable learning</h3><p>Free YouTube lectures and low-cost courses opened up coaching-quality teaching to students everywhere.</p></article>
+  <article class="panel"><span class="tag">CLARITY</span><h3>Concept first</h3><p>Relatable explanations that build intuition before formulas, from mechanics to modern physics.</p></article>
+  <article class="panel"><span class="tag">COMMUNITY</span><h3>Learn together</h3><p>A shared journey for JEE, NEET and board-exam aspirants who motivate each other.</p></article>
+ </div>
+</section>
+<section class="s">
+ <h2>Class-wise YouTube lectures</h2>
+ <p class="sub">Pick your class or exam to find Physics Wallah videos on YouTube.</p>
+ <div class="cls">
+   <a href="https://www.youtube.com/results?search_query=Physics+Wallah+Class+6" target="_blank" rel="noopener noreferrer">Class 6<small>Foundation</small></a>
+   <a href="https://www.youtube.com/results?search_query=Physics+Wallah+Class+7" target="_blank" rel="noopener noreferrer">Class 7<small>Foundation</small></a>
+   <a href="https://www.youtube.com/results?search_query=Physics+Wallah+Class+8" target="_blank" rel="noopener noreferrer">Class 8<small>Foundation</small></a>
+   <a href="https://www.youtube.com/results?search_query=Physics+Wallah+Class+9" target="_blank" rel="noopener noreferrer">Class 9<small>Foundation</small></a>
+   <a href="https://www.youtube.com/results?search_query=Physics+Wallah+Class+10" target="_blank" rel="noopener noreferrer">Class 10<small>Boards</small></a>
+   <a href="https://www.youtube.com/results?search_query=Physics+Wallah+Class+11" target="_blank" rel="noopener noreferrer">Class 11<small>Science</small></a>
+   <a href="https://www.youtube.com/results?search_query=Physics+Wallah+Class+12" target="_blank" rel="noopener noreferrer">Class 12<small>Boards</small></a>
+   <a href="https://www.youtube.com/results?search_query=Physics+Wallah+JEE" target="_blank" rel="noopener noreferrer">JEE<small>Engineering</small></a>
+   <a href="https://www.youtube.com/results?search_query=Physics+Wallah+NEET" target="_blank" rel="noopener noreferrer">NEET<small>Medical</small></a>
+ </div>
+</section>
+<section class="s">
+ <h2>Follow Physics Wallah</h2>
+ <p class="sub">Official pages and channels, grouped by category. Opens in a new tab.</p>
+ <div class="soc">
+  <div class="panel"><h3>🎬 Video</h3><ul>
+   <li><a href="https://www.youtube.com/@PhysicsWallah" target="_blank" rel="noopener noreferrer">Physics Wallah – YouTube <span aria-hidden="true">↗</span></a></li>
+   <li><a href="https://www.youtube.com/@alakhpandey" target="_blank" rel="noopener noreferrer">Alakh Pandey – YouTube <span aria-hidden="true">↗</span></a></li>
+   <li><a href="https://www.youtube.com/results?search_query=Physics+Wallah" target="_blank" rel="noopener noreferrer">All PW channels (search) <span aria-hidden="true">↗</span></a></li>
+  </ul></div>
+  <div class="panel"><h3>📱 Social</h3><ul>
+   <li><a href="https://www.instagram.com/physicswallah/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a></li>
+   <li><a href="https://x.com/PhysicsWallah" target="_blank" rel="noopener noreferrer">X (Twitter) <span aria-hidden="true">↗</span></a></li>
+  </ul></div>
+  <div class="panel"><h3>🎓 Learn</h3><ul>
+   <li><a href="https://www.pw.live" target="_blank" rel="noopener noreferrer">Official website – pw.live <span aria-hidden="true">↗</span></a></li>
+  </ul></div>
+ </div>
+</section>
+<div class="banner"><h2>Be part of the Study Circle</h2><a class="btn alt" href="#/join">Sign up</a></div>`,
+
+"/story":()=>`
+<section class="s">
+ <div class="eyebrow">The Story</div>
+ <h1 style="font-size:clamp(1.9rem,5vw,2.8rem);margin:8px 0 12px">From a classroom to a nation of learners</h1>
+ <p class="lead" style="margin-bottom:28px">A short timeline of how Physics Wallah grew, based on publicly known milestones.</p>
+ <ol class="tl">
+  <li><span class="y">Early days</span><br><b>Teaching physics in Prayagraj</b><p>Alakh Pandey began his teaching journey as a physics teacher, known for energetic, easy-to-follow classes.</p></li>
+  <li><span class="y">2016</span><br><b>The YouTube channel begins</b><p>The Physics Wallah channel launched, bringing free lectures to students who could not afford big coaching fees.</p></li>
+  <li><span class="y">2020</span><br><b>The PW app</b><p>Structured, affordable courses arrived in an app, extending beyond physics to chemistry, maths and biology.</p></li>
+  <li><span class="y">2022</span><br><b>PhysicsWallah becomes a unicorn</b><p>The edtech company crossed a billion-dollar valuation, one of the best-known success stories in Indian education.</p></li>
+ </ol>
+ <div class="banner"><h2>Inspired? Join us.</h2><a class="btn alt" href="#/join">Join the Circle</a></div>
+</section>`,
+
+"/join":()=>`
+<section class="s" style="max-width:640px;margin:0 auto">
+ <div class="eyebrow">Join</div>
+ <h1 style="font-size:clamp(1.9rem,5vw,2.6rem);margin:8px 0 10px">Join the PW Study Circle</h1>
+ <p class="sub">Get study tips, exam reminders and community updates. Tell us a bit about you.</p>
+ <div class="panel">
+ <form id="f" novalidate>
+  <div class="two">
+   <div><label for="n">Name</label><input id="n" name="name" required maxlength="80" autocomplete="name"></div>
+   <div><label for="e">Email</label><input id="e" name="email" type="email" required maxlength="120" autocomplete="email"></div>
+  </div>
+  <div class="two">
+   <div><label for="x">Preparing for</label><select id="x" name="exam"><option>JEE</option><option>NEET</option><option>Class 11–12 Boards</option><option>Class 6–10</option><option>Just curious</option></select></div>
+   <div><label for="s">Favourite subject</label><select id="s" name="subject"><option>Physics</option><option>Chemistry</option><option>Maths</option><option>Biology</option></select></div>
+  </div>
+  <div><label for="m">What helped you most? (optional)</label><textarea id="m" name="message" maxlength="400"></textarea></div>
+  <button class="btn" id="b" type="submit">Join the Circle</button>
+  <div id="r" role="status" aria-live="polite"></div>
+  <p class="hint">Your details are stored only to run this community page.</p>
+ </form></div>
+</section>`};
+
+function route(){
+ const p=(location.hash.slice(1)||"/");const k=pages[p]?p:"/";
+ $("#app").innerHTML=pages[k]();
+ document.querySelectorAll("nav a.l").forEach(a=>a.toggleAttribute("aria-current",a.dataset.r===k)||0);
+ document.querySelectorAll("nav a.l").forEach(a=>{a.dataset.r===k?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current")});
+ document.title={"/":"PW Study Circle","/story":"The Story · PW Study Circle","/join":"Join · PW Study Circle"}[k];
+ window.scrollTo(0,0);
+ if(k==="/join")initForm();
+}
+function initForm(){
+ const f=$("#f"),r=$("#r"),b=$("#b");
+ const show=(t,c)=>{r.innerHTML="";const d=document.createElement("div");d.className="msg "+c;d.textContent=t;r.appendChild(d)};
+ f.addEventListener("submit",async ev=>{
+  ev.preventDefault();
+  const d=Object.fromEntries(new FormData(f));
+  d.name=d.name.trim();d.email=d.email.trim();
+  if(!d.name)return show("Please enter your name.","err");
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email))return show("Please enter a valid email address.","err");
+  b.disabled=true;b.textContent="Sending…";
+  try{
+   if(FORM_ENDPOINT.includes("YOUR_FORM_ID"))throw new Error("setup");
+   const res=await fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(d)});
+   if(!res.ok)throw new Error("fail");
+   f.reset();show("You're in! Welcome to the Study Circle, "+d.name+".","ok");
+  }catch(e){
+   show(e.message==="setup"?"Form backend not connected yet. Add your Formspree endpoint in index.html.":"Could not send right now. Please try again.","err");
+  }
+  b.disabled=false;b.textContent="Join the Circle";
+ });
+}
+addEventListener("hashchange",route);
+$("#home").addEventListener("click",e=>{e.preventDefault();if(location.hash!=="#/")location.hash="#/";else route();window.scrollTo(0,0)});
+route();
+</script>
+</body>
+</html>
